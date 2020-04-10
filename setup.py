@@ -40,6 +40,7 @@ setup(
         "pytest"
         "sphinx_rtd_theme",
         "sphinx-argparse",
+        "sphinxarg",
         "nbsphinx",
     ],
     include_package_data=True,
