@@ -1,0 +1,2 @@
+include os_command_py/test/input/*pdb
+include os_command_py/test/input/*xvg
