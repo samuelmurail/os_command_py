@@ -11,7 +11,7 @@ Os_Command_py
 Os_Command_py is a python library allowing a simplified use of the OS commands.
 
 * Online Documentation:
-   https://XXX
+   https://os-command-py.readthedocs.io/en/latest/
 
 * Source code repository:
    https://github.com/samuelmurail/os_command_py
