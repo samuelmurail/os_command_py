@@ -88,7 +88,7 @@ def create_and_go_dir(dir_name):
     >>> TEST_OUT = str(getfixture('tmpdir'))
     >>> start_dir = os.getcwd()
     >>> create_and_go_dir(os.path.join(TEST_OUT, "tmp"))
-    >>> print("Path: ", os.getcwd()) #doctest: +ELLIPSIS
+    >>> print("Path: {}".format(os.getcwd())) #doctest: +ELLIPSIS
     Path: .../tmp
     >>> os.chdir(start_dir)
     """
@@ -126,8 +126,8 @@ def check_file_exist(file):
     :Example:
 
     >>> test_exist = check_file_exist(os.path.join(TEST_PATH, "1y0m.pdb"))
-    >>> print("1y0m.pdb exist: ", test_exist)
-    1y0m.pdb exist:  True
+    >>> print("1y0m.pdb exist: {}".format(test_exist))
+    1y0m.pdb exist: True
     """
 
     file = os.path.expanduser(file)
