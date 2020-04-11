@@ -17,14 +17,14 @@ from setuptools import setup, find_packages
 
 setup(
     name='os_command_py',
-    version="1.0.0",
+    version="1.0.2",
     packages=find_packages(),
     description='os_command_py is a python library allowing a simplified use of the OS commands.',
     long_description=open('README.rst', encoding='utf-8').read(),
     long_description_content_type='text/x-rst',
     author='Samuel Murail',
     author_email='samuel.murail@u-paris.fr',
-    url='XXX',
+    url='https://github.com/samuelmurail/os_command_py',
     classifiers=[
         "Development Status :: 5 - Production/Stable",
         "License :: OSI Approved :: GNU General Public License v2 (GPLv2)",
@@ -37,10 +37,9 @@ setup(
         "Topic :: Scientific/Engineering :: Bio-Informatics",
     ],
     install_requires=[
-        "pytest"
+        "pytest",
         "sphinx_rtd_theme",
         "sphinx-argparse",
-        "sphinxarg",
         "nbsphinx",
     ],
     include_package_data=True,

@@ -9,6 +9,9 @@
 .. image:: https://codecov.io/gh/samuelmurail/os_command_py/branch/master/graph/badge.svg
    :target: https://codecov.io/gh/samuelmurail/os_command_py
 
+.. image:: https://badge.fury.io/py/os-command-py.svg
+   :target: https://badge.fury.io/py/os-command-py
+
 Os_Command_py
 =======================================
 
@@ -34,6 +37,17 @@ Main features:
 
 Installation
 ---------------------------------------
+
+Using Pypi
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+   pip3 install os_command_py
+
+
+From source code
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Get the os_command_py library from `github`_.
 
