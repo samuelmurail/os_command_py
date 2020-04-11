@@ -3,10 +3,16 @@
 # And:
 # https://github.com/Becksteinlab/GromacsWrapper/blob/master/.travis.yml
 
-language: generic
+language: python
+
+python:
+  - "3.5"
+  - "3.6"
+  - "3.7"
 
 os:
   - linux
+  - osx
 
 sudo: false
 
@@ -22,6 +28,8 @@ env:
     - PYTHON_VERSION=3.6
     - PIP_DEPENDENCIES="pytest==5.2.2 codecov pytest-cov"
 
+cache: pip
+
 matrix:
     include:
         - os: linux
@@ -30,10 +38,11 @@ matrix:
           env: PYTHON_VERSION=3.7
 
 install:
+  - pip install -r requirements.txt
 
 script:
   - cd ${TRAVIS_BUILD_DIR}
-  # Test gromacs_py
+  # Test os_command_py
   # Need to add --ignore to avoid weird error, see: https://github.com/pytest-dev/pytest/issues/4782
   - pytest --ignore ci-helpers --cov-report=xml --cov=os_command_py
   # Build Doc:
