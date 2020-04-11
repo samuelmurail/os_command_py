@@ -4,8 +4,8 @@
    :target: https://os-command-py.readthedocs.io/en/latest/?badge=latest
    :alt: Documentation Status
 
-.. image:: https://travis-ci.com/samuelmurail/os_command_py.svg?branch=master
-    :target: https://travis-ci.com/samuelmurail/os_command_py
+.. image:: https://travis-ci.org/samuelmurail/os_command_py.svg?branch=master
+    :target: https://travis-ci.org/samuelmurail/os_command_py
 
 Os_Command_py
 =======================================
