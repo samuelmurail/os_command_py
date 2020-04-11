@@ -1,7 +1,8 @@
 
 
-.. image:: XXX
-
+.. image:: https://readthedocs.org/projects/os-command-py/badge/?version=latest
+:target: https://os-command-py.readthedocs.io/en/latest/?badge=latest
+:alt: Documentation Status
 
 
 Os_Command_py
