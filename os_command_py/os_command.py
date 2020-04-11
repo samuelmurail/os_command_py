@@ -239,10 +239,11 @@ def get_gmx_version():
     """ Get gromacs version of mdrun.
 
     :Example:
-
-    >>> print('Version is {}'.format(get_gmx_version())) #doctest: +ELLIPSIS
+    ```
+    $ print('Version is {}'.format(get_gmx_version()))
     Version is ...
-    """ 
+    ```
+    """
 
     gmx_bin = which('gmx')
     cmd_copy = Command([gmx_bin, "-version"])
@@ -289,7 +290,7 @@ class Command:
     wc ...test/input/1y0m.pdb
     >>> return_code = cmd_test_2.run(out_data=True)
     >>> print(return_code['stdout']) #doctest: +ELLIPSIS
-        1627   18466  131787 ...test/input/1y0m.pdb
+      1627   18466  131787 ...test/input/1y0m.pdb
     <BLANKLINE>
     """
 
