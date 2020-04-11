@@ -289,9 +289,9 @@ class Command:
     >>> cmd_test_2.display() #doctest: +ELLIPSIS
     wc ...test/input/1y0m.pdb
     >>> return_code = cmd_test_2.run(out_data=True)
-    >>> print(return_code['stdout']) #doctest: +ELLIPSIS
-      1627   18466  131787 ...test/input/1y0m.pdb
-    <BLANKLINE>
+    >>> print('Number of line = {}  word = {} char = {}'.format(\
+    *return_code['stdout'].split()[:3])) #doctest: +ELLIPSIS
+    Number of line = 1627  word = 18466 char = 131787
     """
 
     def __init__(self, list_cmd, my_env=None, **kwargs):
