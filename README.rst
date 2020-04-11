@@ -62,7 +62,7 @@ Get the os_command_py library from `github`_.
 Author
 ---------------------------------------
 
-* **Samuel Murail**, Maitre de conférence - `Université Paris Diderot <https://www.univ-paris-diderot.fr>`_, `CMPLI <http://bfa.univ-paris-diderot.fr/equipe-8/>`_.
+* **`Samuel Murail<https://samuelmurail.github.io/PersonalPage/>`_**, Associate Professor - `Université Paris Diderot <https://www.univ-paris-diderot.fr>`_, `CMPLI <http://bfa.univ-paris-diderot.fr/equipe-8/>`_.
 
 See also the list of `contributors <https://github.com/samuelmurail/os_command_py/contributors>`_ who participated in this project.
 
