@@ -1,11 +1,13 @@
 
-
 .. image:: https://readthedocs.org/projects/os-command-py/badge/?version=latest
    :target: https://os-command-py.readthedocs.io/en/latest/?badge=latest
    :alt: Documentation Status
 
 .. image:: https://travis-ci.org/samuelmurail/os_command_py.svg?branch=master
-    :target: https://travis-ci.org/samuelmurail/os_command_py
+   :target: https://travis-ci.org/samuelmurail/os_command_py
+
+.. image:: https://codecov.io/gh/samuelmurail/os_command_py/branch/master/graph/badge.svg
+   :target: https://codecov.io/gh/samuelmurail/os_command_py
 
 Os_Command_py
 =======================================
@@ -33,7 +35,7 @@ Main features:
 Installation
 ---------------------------------------
 
-Get the gromacs_py library from `github`_.
+Get the os_command_py library from `github`_.
 
 .. code-block:: bash
 
