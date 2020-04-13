@@ -12,8 +12,6 @@ jobs:
       language: shell       # 'language: python' is an error on Travis CI macOS
 
 
-sudo: false
-
 git:
   depth: false
 

@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+# Don't forget the __init__.py to be considered as a package
+
 # Create the pipy:
 # python setup.py sdist
 # twine check dist/*
@@ -17,7 +19,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='os_command_py',
-    version="1.0.2",
+    version="1.0.3",
     packages=find_packages(),
     description='os_command_py is a python library allowing a simplified use of the OS commands.',
     long_description=open('README.rst', encoding='utf-8').read(),

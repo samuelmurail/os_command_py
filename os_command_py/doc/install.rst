@@ -1,7 +1,7 @@
 Installation
 =======================================
 
-Get the gromacs_py library from `github`_.
+Get the os_command_py library from `github`_.
 
 .. code-block:: bash
 
