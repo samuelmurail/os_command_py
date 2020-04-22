@@ -50,7 +50,8 @@ def which(*program_list):
         else:
             for path in os.environ["PATH"].split(os.pathsep):
                 # Use expanduser in case of ~ caracter
-                exe_file = os.path.expanduser(os.path.join(path.replace("\\ ", " "), program))
+                exe_file = os.path.expanduser(
+                    os.path.join(path.replace("\\ ", " "), program))
                 # print(exe_file)
                 if os.path.isfile(exe_file):
                     return exe_file
@@ -146,10 +147,12 @@ def check_directory_exist(directory):
     :Example:
 
     >>> test_exist = check_directory_exist(TEST_PATH)
-    >>> print("Directory {} exist: {}".format(TEST_PATH, test_exist)) #doctest: +ELLIPSIS
+    >>> print("Directory {} exist: {}".format(TEST_PATH, test_exist))\
+    #doctest: +ELLIPSIS
     Directory ...test/input exist: True
     >>> test_exist = check_directory_exist(os.path.join(TEST_PATH,'no_way'))
-    >>> print("Directory {} exist: {}".format(TEST_PATH+'/no_way', test_exist)) #doctest: +ELLIPSIS
+    >>> print("Directory {} exist: {}".format(
+    ... TEST_PATH+'/no_way', test_exist)) #doctest: +ELLIPSIS
     Directory ...test/input/no_way exist: False
     """
 
@@ -302,7 +305,8 @@ class Command:
         # Add "-" to the key, eg ter -> -ter
         if kwargs is not None and len(kwargs) != 0:
             # Use sorted to have same order of command in doctest
-            for key, value in sorted(kwargs.items(), key=operator.itemgetter(0)):
+            for key, value in sorted(kwargs.items(),
+                                     key=operator.itemgetter(0)):
                 # if the dict value is None just add a flag -`key`
                 if value is not None:
                     self.cmd.append("-" + key)
@@ -335,21 +339,24 @@ class Command:
 
     def display(self):
         """ Show ``Command`` object that will be launch.
-        Show only the name of the command (*eg.* `gmx`) instead of the full path.
+        Show only the name of the command (*eg.* `gmx`) instead
+        of the full path.
         Show relative path for files in the command.
         """
 
         relative_path_list = []
 
         for i, arg in enumerate(self.cmd):
-            # To avoid showing the full pass of the program extract only the name:
+            # To avoid showing the full pass of the program extract
+            # only the name:
             if i == 0:
                 relative_path = os.path.split(arg)[1]
             else:
-                try:
-                    relative_path = os.path.relpath(arg)
-                except:
-                    relative_path = arg
+                relative_path = os.path.relpath(arg)
+                # try:
+                #     relative_path = os.path.relpath(arg)
+                # except:
+                #     relative_path = arg
             relative_path_list.append(relative_path)
         print(" ".join(relative_path_list))
 
@@ -401,16 +408,18 @@ class Command:
 
         print("The following command could not be executed correctly :")
         self.display()
-        raise RuntimeError('Following Command Fails : {} \n Ret code = {} \n {} \n {}'.format(
-            " ".join(self.cmd),
-            proc.returncode,
-            stdout_data.decode('utf-8'), 
-            stderr_data.decode('utf-8')))
+        raise RuntimeError(
+            'Following Command Fails : {} \n Ret code = {} \n {} \n {}'.format(
+                " ".join(self.cmd),
+                proc.returncode,
+                stdout_data.decode('utf-8'),
+                stderr_data.decode('utf-8')))
 
-    def run_background(self, func_input_dict, com_input="", display=False, out_data=False):
+    def run_background(self, func_input_dict, com_input="",
+                       display=False, out_data=False):
         """ Launch ``Command`` object that will be launch.
-        Will the command is running launch the `function` using `func_input_dict`
-        as argument.
+        Will the command is running launch the `function` using
+        `func_input_dict` as argument.
         return programm output is `out_data` is set to `True`
 
         :param function: function to be launch
@@ -467,7 +476,8 @@ class Command:
         self.display()
         print(stdout_data.decode('utf-8'))
         print(stderr_data.decode('utf-8'))
-        raise RuntimeError('Following Command Fails : {}'.format(" ".join(self.cmd)))
+        raise RuntimeError('Following Command Fails : {}'.format(
+            " ".join(self.cmd)))
 
 
 if __name__ == "__main__":
