@@ -19,7 +19,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='os_command_py',
-    version="1.0.4",
+    version="1.0.5",
     packages=find_packages(),
     description='os_command_py is a python library allowing a simplified use of the OS commands.',
     long_description=open('README.rst', encoding='utf-8').read(),
@@ -33,6 +33,7 @@ setup(
         "Natural Language :: English",
         "Operating System :: OS Independent",
         "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.5",
