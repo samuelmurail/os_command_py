@@ -19,7 +19,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='os_command_py',
-    version="1.0.3",
+    version="1.0.4",
     packages=find_packages(),
     description='os_command_py is a python library allowing a simplified use of the OS commands.',
     long_description=open('README.rst', encoding='utf-8').read(),
