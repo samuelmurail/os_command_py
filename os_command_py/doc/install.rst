@@ -1,6 +1,24 @@
 Installation
 =======================================
 
+Using Pypi
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+   pip3 install os_command_py
+
+
+Using Conda
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+   conda install os_command_py -c conda-forge 
+
+From source code
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Get the os_command_py library from `github`_.
 
 .. code-block:: bash
@@ -10,23 +28,11 @@ Get the os_command_py library from `github`_.
 
 .. _github: https://github.com/samuelmurail/os_command_py
 
-Prerequisites
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-1. python 3 libraries:  
-	* Sphinx and sphinx-argparse (only for building documentation)
-	* Pytest (only for testing purpose)
 
 Make the documentation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Need `sphinx`_ installed with the argparse sphinx module:
-
-.. code-block:: bash
-
-	pip3 install Sphinx --user
-	pip3 install sphinx-argparse --user
-
+Need `sphinx`_ installed with the argparse sphinx module.
 You can then build the documentation either in html format or pdf.
 
 .. code-block:: bash

@@ -49,6 +49,14 @@ Using Pypi
    pip3 install os_command_py
 
 
+Using Conda
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+   conda install os_command_py -c conda-forge 
+
+
 From source code
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
