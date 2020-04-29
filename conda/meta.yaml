@@ -24,7 +24,7 @@ requirements:
 
 test:
   imports:
-    - os_command_py
+    - os_command_py.os_command
   requires:
     - pytest
   commands:
