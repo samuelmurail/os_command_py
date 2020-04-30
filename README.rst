@@ -12,8 +12,9 @@
 .. image:: https://badge.fury.io/py/os-command-py.svg
    :target: https://badge.fury.io/py/os-command-py
 
-.. image:: https://anaconda.org/conda-forge/os_command_py/badges/installer/conda.svg
-   :target: https://conda.anaconda.org/conda-forge
+.. image:: https://img.shields.io/conda/vn/conda-forge/os_command_py.svg
+   :target: https://anaconda.org/conda-forge/os_command_py
+
 
 Os_Command_py
 =======================================
