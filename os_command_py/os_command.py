@@ -275,6 +275,9 @@ class Command:
     :param env: environment variable
     :type env: dict
 
+    :param prefix: argument prefix
+    :type prefix: str, opional, default "-"
+
     :Example:
 
     >>> # Simple ls command
@@ -315,7 +318,7 @@ class Command:
 
     """
 
-    def __init__(self, list_cmd, my_env=None, **kwargs):
+    def __init__(self, list_cmd, my_env=None, prefix='-', **kwargs):
         self.cmd = list_cmd
         self.env = my_env
         # Add supplementary argument for the command
@@ -327,10 +330,10 @@ class Command:
                                      key=operator.itemgetter(0)):
                 # if the dict value is None just add a flag -`key`
                 if value is not None:
-                    self.cmd.append("-" + key)
+                    self.cmd.append(prefix + key)
                     self.cmd.append(value)
                 else:
-                    self.cmd.append("-" + key)
+                    self.cmd.append(prefix + key)
         # print("Cmd:",self.cmd)
 
     def define_env(self, my_env):
