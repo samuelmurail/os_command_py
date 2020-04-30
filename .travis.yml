@@ -22,13 +22,13 @@ branches:
 cache: pip
 
 install:
-  - pip install -r requirements.txt
+  - pip3 install -r requirements.txt
 
 script:
   - cd ${TRAVIS_BUILD_DIR}
   # Test os_command_py
   # Need to add --ignore to avoid weird error, see: https://github.com/pytest-dev/pytest/issues/4782
-  - python3 -m pytest --ignore ci-helpers --cov-report=xml --cov=os_command_py
+  - pytest --ignore ci-helpers --cov-report=xml --cov=os_command_py
   # Build Doc:
   # - cd os_command_py/doc
   # - sphinx-build -b html . _build
