@@ -440,6 +440,31 @@ class Command:
 
         :return: Return Code or output dict
         :rtype: bool/dict
+
+        Example:
+
+        >>> import time
+        >>>
+        >>> # Create the function that will run while the command is running
+        >>> def function_iter(proc, dict):
+        ...     while proc.poll() is None:
+        ...         time.sleep(dict['refresh_time'])
+        ...         print('X', end='')
+        >>>
+        >>> monitor = {'function': function_iter,
+        ...            'refresh_time': 0.1}
+        >>>
+        >>> # Create the command
+        >>> cmd_list = ['sleep', '1']
+        >>> background_test = Command(list_cmd=cmd_list)
+        >>> background_test.display() #doctest: +ELLIPSIS
+        sleep 1
+        >>> return_code = background_test.run_background(monitor,
+        ...                                              out_data=True)
+        XXXXXXXXXX
+        >>> print(return_code['stdout']) #doctest: +ELLIPSIS
+        <BLANKLINE>
+
         """
 
         # stderr to NULL solve some issue with backgound running
