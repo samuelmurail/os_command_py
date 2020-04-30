@@ -242,10 +242,11 @@ def get_gmx_version():
     """ Get gromacs version of mdrun.
 
     :Example:
-    ```
-    $ print('Version is {}'.format(get_gmx_version()))
-    Version is ...
-    ```
+    
+    .. code-block:: python
+
+        >>> print('Version is {}'.format(get_gmx_version()))
+        Version is ...
     """
 
     gmx_bin = which('gmx')

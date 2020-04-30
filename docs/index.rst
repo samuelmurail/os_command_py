@@ -12,8 +12,7 @@
    :caption: Table of Contents:
 
    install
-   os_command_sys
-   os_command_shortcut
+   modules
 
 Indices and tables
 ------------------
