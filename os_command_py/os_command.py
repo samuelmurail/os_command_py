@@ -477,8 +477,9 @@ class Command:
         >>> background_test.display() #doctest: +ELLIPSIS
         sleep 1
         >>> return_code = background_test.run_background(monitor,
-        ...                                              display=True)
-        XXXXXXXXXXsleep 1
+        ...                                              display=True)\
+        #doctest: +ELLIPSIS
+        XXXXXX...sleep 1
         None
         <BLANKLINE>
         <BLANKLINE>
