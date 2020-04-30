@@ -245,7 +245,7 @@ def get_gmx_version():
 
     .. code-block:: python
 
-        >>> print('Version is {}'.format(get_gmx_version()))
+        $ print('Version is {}'.format(get_gmx_version()))
         Version is ...
     """
 
