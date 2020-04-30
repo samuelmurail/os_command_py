@@ -277,6 +277,8 @@ class Command:
 
     :Example:
 
+    >>> # Simple ls command
+    >>>
     >>> cmd_list = ['ls', '-a', TEST_PATH]
     >>> cmd_test = Command(list_cmd=cmd_list)
     >>> cmd_test.display() #doctest: +ELLIPSIS
@@ -288,6 +290,20 @@ class Command:
     1y0m.pdb
     volume.xvg
     <BLANKLINE>
+    >>> # Not Working command:
+    >>>
+    >>> cmd_list = ['ls', '-a', '/NON_EXISTING_FILE']
+    >>> cmd_test = Command(list_cmd=cmd_list)
+    >>> cmd_test.display() #doctest: +ELLIPSIS
+    ls -a .../NON_EXISTING_FILE
+    >>> try:
+    ...     cmd_test.run()
+    ... except RuntimeError:
+    ...     print('Command failed')
+    The following command could not be executed correctly :
+    ls -a ../../../../../NON_EXISTING_FILE
+    Command failed
+    >>> # Word Count
     >>> cmd_list = ['wc', os.path.join(TEST_PATH,'1y0m.pdb')]
     >>> cmd_test_2 = Command(list_cmd=cmd_list)
     >>> cmd_test_2.display() #doctest: +ELLIPSIS
@@ -296,6 +312,7 @@ class Command:
     >>> print('Number of line = {}  word = {} char = {}'.format(\
     *return_code['stdout'].split()[:3])) #doctest: +ELLIPSIS
     Number of line = 1627  word = 18466 char = 131787
+
     """
 
     def __init__(self, list_cmd, my_env=None, **kwargs):
@@ -460,9 +477,10 @@ class Command:
         >>> background_test.display() #doctest: +ELLIPSIS
         sleep 1
         >>> return_code = background_test.run_background(monitor,
-        ...                                              out_data=True)
-        XXXXXXXXXX
-        >>> print(return_code['stdout']) #doctest: +ELLIPSIS
+        ...                                              display=True)
+        XXXXXXXXXXsleep 1
+        None
+        <BLANKLINE>
         <BLANKLINE>
 
         """
