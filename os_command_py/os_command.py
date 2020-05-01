@@ -310,7 +310,7 @@ class Command:
     >>> return_code = cmd_test_2.run(out_data=True)
     >>> print('Number of line = {}  word = {} char = {}'.format(\
     *return_code['stdout'].split()[:3])) #doctest: +ELLIPSIS
-    Number of line = 1627  word = 18466 char = 131787
+    Number of line = 1627  word = 18466 char = 13...
 
     """
 
@@ -337,19 +337,16 @@ class Command:
 
         :Example:
 
-        >>> cmd_list = ['/bin/sh', '-c', 'echo $USELESS']
+        >>> print(os.getenv('USELESS'))
+        None
+        >>> cmd_list = ['ls', '-lsh']
         >>> cmd_test = Command(list_cmd=cmd_list)
         >>> cmd_test.display() #doctest: +ELLIPSIS
-        sh -c echo $USELESS
-        >>> return_code = cmd_test.run(out_data=True)
-        >>> print(return_code['stdout']) #doctest: +ELLIPSIS
-        <BLANKLINE>
-        <BLANKLINE>
+        ls -lsh
         >>> cmd_test.define_env(os.environ.update({'USELESS': 'Changed'}))
         >>> return_code = cmd_test.run(out_data=True)
-        >>> print(return_code['stdout']) #doctest: +ELLIPSIS
+        >>> print(os.getenv('USELESS'))
         Changed
-        <BLANKLINE>
         """
 
         self.env = my_env
