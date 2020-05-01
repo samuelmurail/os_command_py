@@ -4,14 +4,15 @@
    contain the root `toctree` directive.
 
 
-.. include:: ../../README.rst
-
 
 .. toctree::
    :maxdepth: 2
    :caption: Table of Contents:
 
-   install
+   readme
+   installation
+   contributing
+   os_command_sys
    modules
 
 Indices and tables
