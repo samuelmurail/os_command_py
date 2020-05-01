@@ -36,8 +36,9 @@ def which(*program_list):
     :Example:
 
     >>> ls_path = which('dontexist', 'ls')
-    >>> print(ls_path)
-    /bin/ls
+    >>> print(ls_path.find('ls') != -1) #doctest: +ELLIPSIS
+    True
+
 
     ..note:
 
@@ -66,7 +67,8 @@ def is_exe(fpath):
 
     :Example:
 
-    >>> print(is_exe('/bin/ls'))
+    >>> ls_path = which('ls')
+    >>> print(is_exe(ls_path))
     True
 
     """
