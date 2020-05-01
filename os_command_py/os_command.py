@@ -24,7 +24,7 @@ TEST_PATH = os.path.abspath(os.path.join(OS_LIB_DIR, "./test/input/"))
 
 
 def which(*program_list):
-    """ find and return the path of a program
+    """ find and return the first path of a program if find.
     Look for all combination within the `$PATH` env variable
 
     :param program_list: list of program name
@@ -35,26 +35,22 @@ def which(*program_list):
 
     :Example:
 
-    >>> ls_path = which('ls')
+    >>> ls_path = which('dontexist', 'ls')
     >>> print(ls_path)
     /bin/ls
+
+    ..note:
+
+        Consider using shutil.which(program) for windows.
 
     """
 
     for program in program_list:
-        fpath, fname = os.path.split(program)
-        # print(fpath, fname)
-        if fpath:
-            if is_exe(program):
-                return program
-        else:
-            for path in os.environ["PATH"].split(os.pathsep):
-                # Use expanduser in case of ~ caracter
-                exe_file = os.path.expanduser(
-                    os.path.join(path.replace("\\ ", " "), program))
-                # print(exe_file)
-                if os.path.isfile(exe_file):
-                    return exe_file
+        # Check every program until one is good.
+        exe_path = shutil.which(program)
+        if exe_path is not None:
+            return exe_path
+
     print("program not found !!")
     raise IOError("program not found :", program_list)
 
@@ -90,7 +86,7 @@ def create_and_go_dir(dir_name):
     >>> start_dir = os.getcwd()
     >>> create_and_go_dir(os.path.join(TEST_OUT, "tmp"))
     >>> print("Path: {}".format(os.getcwd())) #doctest: +ELLIPSIS
-    Path: .../tmp
+    Path: ...tmp
     >>> os.chdir(start_dir)
     """
 
@@ -149,11 +145,11 @@ def check_directory_exist(directory):
     >>> test_exist = check_directory_exist(TEST_PATH)
     >>> print("Directory {} exist: {}".format(TEST_PATH, test_exist))\
     #doctest: +ELLIPSIS
-    Directory ...test/input exist: True
+    Directory ...input exist: True
     >>> test_exist = check_directory_exist(os.path.join(TEST_PATH,'no_way'))
     >>> print("Directory {} exist: {}".format(
     ... TEST_PATH+'/no_way', test_exist)) #doctest: +ELLIPSIS
-    Directory ...test/input/no_way exist: False
+    Directory ...no_way exist: False
     """
 
     directory = os.path.expanduser(directory)
@@ -285,7 +281,7 @@ class Command:
     >>> cmd_list = ['ls', '-a', TEST_PATH]
     >>> cmd_test = Command(list_cmd=cmd_list)
     >>> cmd_test.display() #doctest: +ELLIPSIS
-    ls -a ...test/input
+    ls -a ...input
     >>> return_code = cmd_test.run(out_data=True)
     >>> print(return_code['stdout']) #doctest: +ELLIPSIS
     .
@@ -298,19 +294,19 @@ class Command:
     >>> cmd_list = ['ls', '-a', '/NON_EXISTING_FILE']
     >>> cmd_test = Command(list_cmd=cmd_list)
     >>> cmd_test.display() #doctest: +ELLIPSIS
-    ls -a .../NON_EXISTING_FILE
+    ls -a ...NON_EXISTING_FILE
     >>> try:
     ...     cmd_test.run()
     ... except RuntimeError:
-    ...     print('Command failed')
+    ...     print('Command failed') #doctest: +ELLIPSIS
     The following command could not be executed correctly :
-    ls -a ../../../../../NON_EXISTING_FILE
+    ls -a ...NON_EXISTING_FILE
     Command failed
     >>> # Word Count
     >>> cmd_list = ['wc', os.path.join(TEST_PATH,'1y0m.pdb')]
     >>> cmd_test_2 = Command(list_cmd=cmd_list)
     >>> cmd_test_2.display() #doctest: +ELLIPSIS
-    wc ...test/input/1y0m.pdb
+    wc ...1y0m.pdb
     >>> return_code = cmd_test_2.run(out_data=True)
     >>> print('Number of line = {}  word = {} char = {}'.format(\
     *return_code['stdout'].split()[:3])) #doctest: +ELLIPSIS
