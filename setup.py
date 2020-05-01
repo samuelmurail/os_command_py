@@ -39,11 +39,6 @@ setup(
         "Programming Language :: Python :: 3.5",
         "Topic :: Scientific/Engineering :: Bio-Informatics",
     ],
-    install_requires=[
-        "pytest",
-        "sphinx_rtd_theme",
-        "sphinx-argparse",
-        "nbsphinx",
-    ],
+    install_requires=[],
     include_package_data=True,
 )

@@ -1,13 +1,6 @@
-pip
-bump2version
-wheel
-watchdog
-flake8
-tox
-coverage
-Sphinx
-twine
-
+sphinx-argparse
+sphinx_rtd_theme
+nbsphinx
 pytest
-pytest-runner
+codecov
 pytest-cov
