@@ -22,7 +22,7 @@ branches:
 cache: pip
 
 install:
-  - pip3 install -r requirements.txt
+  - pip3 install -r requirements.txt # pip3 only necessary for osx
 
 script:
   - cd ${TRAVIS_BUILD_DIR}
