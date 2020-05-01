@@ -11,9 +11,10 @@
 
    readme
    installation
-   contributing
+   usage
    os_command_sys
-   modules
+   os_command_shortcuts
+   contributing
 
 Indices and tables
 ------------------
