@@ -30,7 +30,7 @@ branches:
 cache: pip
 
 install:
-  - pip3 install . # no requirements
+  - pip3 install -r requirements_dev.txt
 
 script:
   - cd ${TRAVIS_BUILD_DIR}
