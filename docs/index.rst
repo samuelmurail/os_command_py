@@ -15,6 +15,7 @@
    os_command_sys
    os_command_shortcuts
    contributing
+   authors
 
 Indices and tables
 ------------------

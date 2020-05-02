@@ -243,8 +243,9 @@ def get_gmx_version():
 
     .. code-block:: python
 
-        $ print('Version is {}'.format(get_gmx_version()))
-        Version is ...
+        print('Version is {}'.format(get_gmx_version()))
+        Version is 2016.4
+
     """
 
     gmx_bin = which('gmx')
